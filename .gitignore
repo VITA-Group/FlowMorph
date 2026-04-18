@@ -1,0 +1,22 @@
+__pycache__/
+*.py[cod]
+*.egg-info/
+.ipynb_checkpoints/
+.DS_Store
+.env
+.venv/
+venv/
+
+outputs/
+logs/
+*.ckpt
+*.pt
+*.pth
+*.safetensors
+data/pairs/*.png
+data/pairs/*.jpg
+!data/pairs/README.md
+
+# Large files from the upstream experimental tree (never commit).
+*.tar.xz
+*.tar.gz

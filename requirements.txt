@@ -1,0 +1,19 @@
+# Core
+torch>=2.1
+torchvision
+diffusers>=0.30
+transformers>=4.40
+accelerate
+numpy
+Pillow
+tqdm
+PyYAML
+
+# Optional: perceptual / fidelity metrics used by tools/eval_metrics.py
+lpips
+clean-fid
+torchmetrics
+
+# Optional: landmark-based geometry evaluation (tools/eval_landmarks.py)
+mediapipe
+opencv-python

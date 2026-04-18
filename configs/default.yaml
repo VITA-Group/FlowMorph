@@ -1,0 +1,25 @@
+# Default FlowMorph configuration.
+# These are the values used to produce the numbers in Table 1 of the paper.
+
+model:
+  backbone: "black-forest-labs/FLUX.1-schnell"   # swap to FLUX.1-Depth-dev for the paper's depth-aligned benchmarks
+  dtype: "bfloat16"
+  height: 512
+  width: 512
+  inference_steps: 100
+
+optimization:
+  start_timestep_idx: 35                          # t_i in the paper; smaller => longer backward step
+  optim_steps: 100
+  noise_lr: 0.01                                  # LR for u (one-step vector)
+  pred_lr: 0.04                                   # LR for z+Delta
+  sampling_count: 10                              # initialization iterations for Flow-Optimizer
+
+inference:
+  timestep_indices: [35, 55, 75, 95]              # deterministic reverse chain used at decoding
+  guidance: null
+
+interpolation:
+  num_frames: 20
+  mixing: "decoupled"                             # {"decoupled", "linear", "slerp", "linear_states"}
+  separate_optimizers: true                       # use a distinct FluxOptimizer for src and tgt
