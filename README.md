@@ -64,38 +64,7 @@ each image and unlocks two complementary modes:
 
 ---
 
-## 📈 Main results
-
-Quantitative comparison (lower is better) on **Morph4Data** and the **Overall** set.
-
-| Method                      | Morph4Data LPIPS↓ | Morph4Data FID↓ | Morph4Data PPL↓ | Overall LPIPS↓ | Overall FID↓ | Overall PPL↓ |
-|-----------------------------|------------------:|----------------:|----------------:|---------------:|-------------:|-------------:|
-| IMPUS [Yang 2023]           | 134.88            | 210.66          | 3199.90         | 265.40         | 174.76       | 6462.93      |
-| DiffMorpher [Zhang 2024]    |  98.56            | 292.54          | 2394.05         | 189.13         | 209.10       | 4658.25      |
-| Spherical Interpolation     | 103.74            | 245.22          | 2593.58         | 223.52         | 198.34       | 5587.93      |
-| SDEditInterp                | 141.62            | 325.70          | 3328.40         | 281.75         | 248.90       | 6705.60      |
-| FreeMorph [Cao 2025]        |  80.30            | 201.09          | 2007.52         | 162.99         | 152.88       | 4192.82      |
-| **FlowMorph (FlowInterp)**  | **76.85**         | **184.72**      | **1914.63**     | **157.10**     | **139.40**   | **3990.55**  |
-
-**Geometry preservation (Flow-Optimizer).** Landmark-tracking on 20 depth-aligned face pairs (478 MediaPipe keypoints per frame; lower = more consistent geometry):
-
-| Method            | Mean landmark displacement ↓ |
-|-------------------|-----------------------------:|
-| DiffMorpher       | 153.22                       |
-| RF-Inversion      | 123.74                       |
-| **Flow-Optimizer**| **85.33**                    |
-
-<p align="center">
-  <img src="assets/benchmark.png" alt="Flow-Optimizer qualitative comparison" width="100%">
-  <br>
-  <sub><b>Flow-Optimizer.</b> Age progression (top) and scene transformation (bottom). Flow-Optimizer produces smoother transitions and better identity / structural consistency than RF-Inversion and DiffMorpher.</sub>
-</p>
-
-<p align="center">
-  <img src="assets/baselines.png" alt="Qualitative comparison against baselines" width="100%">
-  <br>
-  <sub><b>Flow-Interpolation.</b> Qualitative comparison with existing image morphing techniques and our GaussianInit / SDEditInterp ablations. FlowMorph stays faithful to both endpoints while interpolating semantically.</sub>
-</p>
+## 🖼️ Result gallery
 
 <p align="center">
   <img src="assets/morph_gallery.png" alt="Result gallery" width="100%">
